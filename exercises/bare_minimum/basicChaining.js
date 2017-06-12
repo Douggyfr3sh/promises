@@ -15,6 +15,14 @@ var Promise = require('bluebird');
 
 var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
   // TODO
+  var enc = 'utf8';
+  var username;
+  fs.readFile(readFilePath, enc)
+  .then( (err,data) => {
+    //get username
+    username = data.split('\n')[0];
+    console.log('username: ',username);
+  });
 };
 
 // Export these functions so we can test them
